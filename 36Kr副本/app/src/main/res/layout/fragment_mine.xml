@@ -18,7 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@mipmap/head_image" />
+            android:src="@mipmap/head_image"
+            />
 
         <TextView
             android:layout_width="0dp"
