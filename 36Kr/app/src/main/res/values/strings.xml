@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">36Kr</string>
+    <!-- 标题栏的名字 -->
+    <string name="title_name">新闻</string>
+    <!--抽屉开关-->
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
 </resources>

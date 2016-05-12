@@ -2,4 +2,14 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- 标题栏的高度 -->
+    <!--<dimen name="title_height">54dp</dimen>-->
+    <!-- 间隔线的粗细 -->
+    <dimen name="parting_line_height">0.3dp</dimen>
+    <!-- 标题栏文字大小 -->
+    <dimen name="title_text_size">18sp</dimen>
+    <!-- 标题栏图标距屏幕边缘距离 -->
+    <dimen name="title_icon_margin_screen">15dp</dimen>
+    <!-- find界面搜索框即屏幕的距离-->
+    <dimen name="find_tool_bar_search_margin_screen">12dp</dimen>
 </resources>

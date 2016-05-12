@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_header_item_all"
+            android:icon="@mipmap/menu_item_all"
+            android:title="全部"></item>
+        <item
+            android:id="@+id/navigation_header_item_early"
+            android:icon="@mipmap/menu_item_tv"
+            android:title="早期项目"></item>
+        <item
+            android:id="@+id/navigation_header_item_tv"
+            android:icon="@mipmap/menu_item_tv"
+            android:title="氪TV"></item>
+    </group>
+</menu>

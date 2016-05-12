@@ -3,4 +3,14 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <!-- 间隔线的颜色 -->
+    <color name="colorPartingLine">#EDEDED</color>
+    <!-- tabLayout的文字颜色-->
+    <color name="colorTabBarText">#4285F4</color>
+    <!-- toolbar的文字颜色-->
+    <color name="colorToolBarText">#5A626D</color>
+    <!-- find页面ToolBar的搜索框颜色-->
+    <color name="colorFindToolBarSearch">#3A78DF</color>
+    <!-- find和mine页面的背景颜色-->
+    <color name="colorFindAndMineBackground">#F9F9F9</color>
 </resources>
