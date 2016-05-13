@@ -203,6 +203,7 @@
                 android:background="@color/colorPartingLine" />
 
             <LinearLayout
+                android:id="@+id/find_fragment_recent_event_ll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
@@ -270,6 +271,7 @@
                 android:background="@color/colorPartingLine" />
 
             <LinearLayout
+                android:id="@+id/find_fragment_find_investor_ll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"

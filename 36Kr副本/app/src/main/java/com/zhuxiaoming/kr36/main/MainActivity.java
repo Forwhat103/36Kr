@@ -4,21 +4,16 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.graphics.Color;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zhuxiaoming.kr36.R;
@@ -26,11 +21,10 @@ import com.zhuxiaoming.kr36.base.BaseActivity;
 import com.zhuxiaoming.kr36.find.FindFragment;
 import com.zhuxiaoming.kr36.invest.InvestFragment;
 import com.zhuxiaoming.kr36.mine.MineFragment;
-import com.zhuxiaoming.kr36.news.news.NewsFragment;
+import com.zhuxiaoming.kr36.news.NewsFragment;
+import com.zhuxiaoming.kr36.news.all.NewsAllFragment;
 import com.zhuxiaoming.kr36.news.earlyitem.EarlyItemFragment;
 import com.zhuxiaoming.kr36.news.krtv.KrTvFragment;
-import com.zhuxiaoming.kr36.search.SearchActivity;
-import com.zhuxiaoming.kr36.setting.SettingActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +58,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         navigationHeadView = LayoutInflater.from(this).inflate(R.layout.navigation_header, null);
         backIv = (ImageView) navigationHeadView.findViewById(R.id.navigation_header_back_iv);
 
-
     }
 
     @Override
@@ -77,6 +70,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         mainTab.setupWithViewPager(mainVp);// 设置TabLayout的适配器
         initTabs();// 添加Tab数据
         mainVp.addOnPageChangeListener(this);
+        mainVp.setOffscreenPageLimit(3);// 参数:缓存当前界面每一侧的界面数
         // 注册广播
         drawerBroadcast = new DrawerBroadcast();
         IntentFilter filter = new IntentFilter();
@@ -112,17 +106,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             case R.id.navigation_header_item_all:
                 // 点击全部item
                 mainDl.closeDrawers();// 关闭抽屉
+                getSupportFragmentManager().beginTransaction().replace(R.id.news_frame, new NewsAllFragment()).commit();
                 item.setChecked(false);//点击了把它设为不选中状态
                 break;
             case R.id.navigation_header_item_early:
                 // 早期项目
-//                getSupportFragmentManager().beginTransaction().replace(R.id.main_vp, new EarlyItemFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.news_frame, new EarlyItemFragment()).commit();
                 Toast.makeText(MainActivity.this, "早期项目", Toast.LENGTH_SHORT).show();
                 item.setChecked(false);//点击了把它设为不选中状态
                 break;
             case R.id.navigation_header_item_tv:
                 // 氪TV
-//                getSupportFragmentManager().beginTransaction().replace(R.id.main_vp, new KrTvFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.news_frame, new KrTvFragment()).commit();
                 Toast.makeText(MainActivity.this, "氪TV", Toast.LENGTH_SHORT).show();
                 item.setChecked(false);//点击了把它设为不选中状态
                 break;

@@ -1,4 +1,4 @@
-package com.zhuxiaoming.kr36.news.news;
+package com.zhuxiaoming.kr36.news.all;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,19 +10,19 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.zhuxiaoming.kr36.R;
+import com.zhuxiaoming.kr36.news.NewsBean;
 
 import java.text.SimpleDateFormat;
-import java.util.List;
 
 /**
  * Created by zhuxiaoming on 16/5/11.
  * 新闻界面的ListView的适配器
  */
-public class NewsAdapter extends BaseAdapter {
+public class NewsAllAdapter extends BaseAdapter {
     private NewsBean datas;
     private Context context;
 
-    public NewsAdapter(Context context) {
+    public NewsAllAdapter(Context context) {
         this.context = context;
     }
 
@@ -64,31 +64,33 @@ public class NewsAdapter extends BaseAdapter {
         viewHolder.typeTv.setText(type);
         viewHolder.dateTv.setText(sdf.format(date));
         Picasso.with(context).load(datas.getData().getData().get(position).getFeatureImg()).placeholder(R.mipmap.equity_icon_founding_time).error(R.mipmap.common_bounced_icon_warning).into(viewHolder.imageView);
-        switch (type) {
-            case "全部":
-                viewHolder.typeTv.setTextColor(context.getResources().getColor(R.color.colorNewsAll));
-                break;
-            case "早期项目":
-                viewHolder.typeTv.setTextColor(context.getResources().getColor(R.color.colorNewsEarlyItem));
-                break;
-            case "B轮后":
-                viewHolder.typeTv.setTextColor(context.getResources().getColor(R.color.colorNewsAfterBWheel));
-                break;
-            case "大公司":
-                viewHolder.typeTv.setTextColor(context.getResources().getColor(R.color.colorNewsBigCompany));
-                break;
-            case "资本":
-                viewHolder.typeTv.setTextColor(context.getResources().getColor(R.color.colorNewsCapital));
-                break;
-            case "深度":
-                viewHolder.typeTv.setTextColor(context.getResources().getColor(R.color.colorNewsDepth));
-                break;
-            case "研究":
-                viewHolder.typeTv.setTextColor(context.getResources().getColor(R.color.colorNewsResearch));
-                break;
-            case "氪TV":
-                viewHolder.typeTv.setTextColor(context.getResources().getColor(R.color.colorNewsKrTV));
-                break;
+        if (type != null) {
+            switch (type) {
+                case "全部":
+                    viewHolder.typeTv.setTextColor(context.getResources().getColor(R.color.colorNewsAll));
+                    break;
+                case "早期项目":
+                    viewHolder.typeTv.setTextColor(context.getResources().getColor(R.color.colorNewsEarlyItem));
+                    break;
+                case "B轮后":
+                    viewHolder.typeTv.setTextColor(context.getResources().getColor(R.color.colorNewsAfterBWheel));
+                    break;
+                case "大公司":
+                    viewHolder.typeTv.setTextColor(context.getResources().getColor(R.color.colorNewsBigCompany));
+                    break;
+                case "资本":
+                    viewHolder.typeTv.setTextColor(context.getResources().getColor(R.color.colorNewsCapital));
+                    break;
+                case "深度":
+                    viewHolder.typeTv.setTextColor(context.getResources().getColor(R.color.colorNewsDepth));
+                    break;
+                case "研究":
+                    viewHolder.typeTv.setTextColor(context.getResources().getColor(R.color.colorNewsResearch));
+                    break;
+                case "氪TV":
+                    viewHolder.typeTv.setTextColor(context.getResources().getColor(R.color.colorNewsKrTV));
+                    break;
+            }
         }
         return convertView;
     }

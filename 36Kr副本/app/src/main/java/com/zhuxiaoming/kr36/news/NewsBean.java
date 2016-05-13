@@ -1,4 +1,4 @@
-package com.zhuxiaoming.kr36.news.news;
+package com.zhuxiaoming.kr36.news;
 
 import java.util.List;
 

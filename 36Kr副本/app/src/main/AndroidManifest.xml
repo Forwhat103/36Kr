@@ -19,6 +19,8 @@
         </activity>
         <activity android:name=".search.SearchActivity" />
         <activity android:name=".setting.SettingActivity" />
+        <activity android:name=".find.findinvestor.FindInvestorActivity" />
+        <activity android:name=".find.recentevent.RecentEventActivity" />
     </application>
 
 </manifest>

@@ -1,26 +1,25 @@
-package com.zhuxiaoming.kr36.news.news;
+package com.zhuxiaoming.kr36.news.all;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
-import com.google.gson.Gson;
 import com.zhuxiaoming.kr36.R;
 import com.zhuxiaoming.kr36.base.BaseFragment;
+import com.zhuxiaoming.kr36.news.NewsBean;
 import com.zhuxiaoming.kr36.search.SearchActivity;
 import com.zhuxiaoming.kr36.util.GsonRequest;
 
@@ -35,12 +34,8 @@ import java.util.concurrent.TimeUnit;
  * Created by zhuxiaoming on 16/5/9.
  * 这是新闻界面的碎片
  */
-public class NewsFragment extends BaseFragment implements View.OnClickListener {
-    private ImageView menuIv;// 标题栏菜单键
-    private ImageView searchIv;// 标题栏搜索按钮
-
-    private NewsAdapter newsAdapter;
-    //    private NewsBean datas;
+public class NewsAllFragment extends BaseFragment {
+    private NewsAllAdapter newsAllAdapter;
     private ListView listView;
     private ViewPager mViewPaper;
     private List<ImageView> images;
@@ -62,14 +57,12 @@ public class NewsFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     protected int initLayout() {
-        return R.layout.fragment_news;
+        return R.layout.fragment_news_all;
     }
 
     @Override
     protected void initView() {
-        menuIv = bindView(R.id.tool_bar_menu_iv);
-        searchIv = bindView(R.id.tool_bar_search_iv);
-        listView = bindView(R.id.news_fragment_lv);
+        listView = bindView(R.id.news_fragment_all_lv);
         cycleView = LayoutInflater.from(getContext()).inflate(R.layout.news_listview_header, null);
         mViewPaper = (ViewPager) cycleView.findViewById(R.id.vp);
 
@@ -77,11 +70,6 @@ public class NewsFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     protected void initData() {
-        // 设置标题栏搜索按钮监听事件
-        searchIv.setOnClickListener(this);
-        // 设置标题栏菜单键的点击事件
-        menuIv.setOnClickListener(this);
-
         initImage();// 加载轮播图图片
         adapter = new NewsCycleViewAdapter();
         mViewPaper.setAdapter(adapter);
@@ -114,14 +102,21 @@ public class NewsFragment extends BaseFragment implements View.OnClickListener {
         }, new Response.Listener<NewsBean>() {
             @Override
             public void onResponse(NewsBean response) {
-                newsAdapter.setDatas(response);
+                newsAllAdapter.setDatas(response);
             }
         }, NewsBean.class);
         // 将请求添加到队列中
         requestQueue.add(gsonRequest);
-        newsAdapter = new NewsAdapter(getContext());
-        listView.setAdapter(newsAdapter);
+        newsAllAdapter = new NewsAllAdapter(getContext());
+        listView.setAdapter(newsAllAdapter);
         listView.addHeaderView(cycleView);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getContext(), "就不跳", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void initImage() {
@@ -139,22 +134,6 @@ public class NewsFragment extends BaseFragment implements View.OnClickListener {
         dots.add(cycleView.findViewById(R.id.dot_1));
         dots.add(cycleView.findViewById(R.id.dot_2));
         dots.add(cycleView.findViewById(R.id.dot_3));
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.tool_bar_menu_iv:
-                // 点击标题栏菜单键,发送打开抽屉的广播
-                Intent intent = new Intent("com.zhuxiaoming.kr36.DRAWER_BC");
-                getActivity().sendBroadcast(intent);
-                break;
-            case R.id.tool_bar_search_iv:
-                // 跳转到搜索界面
-                Intent intent1 = new Intent(getContext(), SearchActivity.class);
-                startActivity(intent1);
-                break;
-        }
     }
 
     /**
