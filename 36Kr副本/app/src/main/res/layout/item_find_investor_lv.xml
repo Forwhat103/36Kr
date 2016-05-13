@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/find_investor_item_image"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_margin="20dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/find_investor_item_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/find_investor_item_image"
+        android:layout_toRightOf="@id/find_investor_item_image"
+        android:text="name"
+        android:textColor="#222C38"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/find_investor_item_care_field_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/find_investor_item_name_tv"
+        android:layout_below="@id/find_investor_item_name_tv"
+        android:layout_marginTop="10dp"
+        android:text="关注领域:"
+        android:textColor="@color/colorToolBarText"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/find_investor_item_invest_stage_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/find_investor_item_name_tv"
+        android:layout_below="@id/find_investor_item_care_field_title_tv"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:text="投资阶段:"
+        android:textColor="@color/colorToolBarText"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/find_investor_item_care_field_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/find_investor_item_care_field_title_tv"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/find_investor_item_care_field_title_tv"
+        android:text="领域"
+        android:textColor="#969FA9"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/find_investor_item_invest_stage_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/find_investor_item_invest_stage_title_tv"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/find_investor_item_invest_stage_title_tv"
+        android:text="阶段"
+        android:textColor="#FF7317"
+        android:textSize="15sp" />
+
+
+</RelativeLayout>

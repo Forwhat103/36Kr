@@ -4,6 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <include layout="@layout/title_bar_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/parting_line_height"
+        android:background="@color/colorPartingLine" />
+
     <ListView
         android:id="@+id/find_investor_aty_lv"
         android:layout_width="match_parent"

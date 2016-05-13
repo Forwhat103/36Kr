@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    android:orientation="horizontal">
+    android:layout_height="?attr/actionBarSize">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
     <ImageView
+        android:id="@+id/title_bar_content_back_tv"
         android:layout_width="wrap_content"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_marginLeft="@dimen/title_icon_margin_screen"
+        android:layout_height="wrap_content"
         android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/title_icon_margin_screen"
         android:src="@mipmap/common_nav_icon_back" />
 
     <TextView
+        android:id="@+id/title_bar_content_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="标题"
         android:textColor="@color/colorToolBarText"
-        android:textSize="@dimen/title_text_size"
-        android:text="标题" />
-    </RelativeLayout>
-</LinearLayout>
+        android:textSize="@dimen/title_text_size" />
+</RelativeLayout>
