@@ -42,7 +42,8 @@
     <color name="colorFindToolBarSearch">#3A78DF</color>
     <!-- find和mine页面的背景颜色-->
     <color name="colorFindAndMineBackground">#EFEFEF</color>
-
+    <!-- 近期活动的filter文字颜色-->
+    <color name="colorRecentEventFilterText">#666666</color>
     <!-- 股权投资界面 -->
 
     <!-- 我的界面 -->

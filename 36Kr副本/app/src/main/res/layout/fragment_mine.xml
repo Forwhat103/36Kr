@@ -97,10 +97,7 @@
 
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/parting_line_height"
-                android:background="@color/colorPartingLine" />
+            <include layout="@layout/parting_line" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -133,10 +130,7 @@
 
             </RelativeLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/parting_line_height"
-                android:background="@color/colorPartingLine" />
+            <include layout="@layout/parting_line" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -181,10 +175,7 @@
                     android:src="@mipmap/equity_icon_list_arrow" />
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/parting_line_height"
-                android:background="@color/colorPartingLine" />
+            <include layout="@layout/parting_line" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -214,10 +205,7 @@
                     android:src="@mipmap/equity_icon_list_arrow" />
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/parting_line_height"
-                android:background="@color/colorPartingLine" />
+            <include layout="@layout/parting_line" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -247,10 +235,7 @@
                     android:src="@mipmap/equity_icon_list_arrow" />
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/parting_line_height"
-                android:background="@color/colorPartingLine" />
+            <include layout="@layout/parting_line" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -281,10 +266,7 @@
 
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/parting_line_height"
-                android:background="@color/colorPartingLine" />
+            <include layout="@layout/parting_line" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -315,10 +297,7 @@
 
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/parting_line_height"
-                android:background="@color/colorPartingLine" />
+            <include layout="@layout/parting_line" />
 
             <LinearLayout
                 android:layout_width="match_parent"

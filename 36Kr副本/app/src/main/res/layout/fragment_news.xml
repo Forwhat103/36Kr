@@ -11,11 +11,7 @@
         android:id="@+id/news_tool_bar"
         layout="@layout/tool_bar_news" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/parting_line_height"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorPartingLine" />
+    <include layout="@layout/parting_line" />
 
     <FrameLayout
         android:id="@+id/news_frame"
@@ -23,14 +19,6 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <!--<ListView-->
-        <!--android:id="@+id/news_fragment_lv"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"></ListView>-->
     </FrameLayout>
 
 </LinearLayout>
-
-    <!--<android.support.design.widget.NavigationView--><!--android:id="@+id/news_nv"--><!--android:layout_width="@dimen/drawer_width"--><!--android:layout_height="match_parent"--><!--android:layout_gravity="left"--><!--app:menu="@menu/navigation_menu"></android.support.design.widget.NavigationView>-->
-
-    <!--</android.support.v4.widget.DrawerLayout>-->

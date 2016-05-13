@@ -4,9 +4,70 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <include layout="@layout/title_bar_content" />
+
+    <include layout="@layout/parting_line" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="近期活动" />
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/recent_event_type_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="活动类型"
+                android:textColor="@drawable/selector_recent_event_filter_text"
+                android:clickable="true"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/recent_event_type_tv"
+                android:src="@drawable/selector_filter_arrow" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/recent_event_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="活动时间"
+                android:clickable="true"
+                android:textColor="@drawable/selector_recent_event_filter_text"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/recent_event_time_tv"
+                android:src="@drawable/selector_filter_arrow" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <include layout="@layout/parting_line" />
+
+    <ListView
+        android:id="@+id/recent_event_lv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></ListView>
+
 </LinearLayout>

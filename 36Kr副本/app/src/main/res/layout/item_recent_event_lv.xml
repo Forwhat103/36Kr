@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/recent_event_item_image"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/cycle_view_four" />
+
+    <TextView
+        android:id="@+id/recent_event_item_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp"
+        android:text="WISEx体育 创智沙龙--崛起"
+        android:textColor="@color/colorNewsItemContent"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/recent_event_item_name_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="首场WISEx行业沙龙活动"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/colorNewsItemNameAndTime"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <TextView
+            android:id="@+id/recent_event_item_state_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/icon_activity_apply"
+            android:text="报名中"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="14dp"
+            android:src="@mipmap/common_icon_location" />
+
+        <TextView
+            android:id="@+id/recent_event_item_place_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="北京"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/recent_event_item_date_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="05月31日 - 05月31日"
+            android:textColor="@color/colorNewsItemNameAndTime"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

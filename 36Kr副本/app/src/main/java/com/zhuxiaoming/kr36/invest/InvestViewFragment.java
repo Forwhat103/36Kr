@@ -1,6 +1,9 @@
 package com.zhuxiaoming.kr36.invest;
 
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.zhuxiaoming.kr36.R;
 import com.zhuxiaoming.kr36.base.BaseFragment;
@@ -35,5 +38,12 @@ public class InvestViewFragment extends BaseFragment {
         investViewAdapter = new InvestViewAdapter(getContext());
         investViewAdapter.setDatas(datas);
         investLv.setAdapter(investViewAdapter);
+
+        investLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getContext(), "就不跳", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
