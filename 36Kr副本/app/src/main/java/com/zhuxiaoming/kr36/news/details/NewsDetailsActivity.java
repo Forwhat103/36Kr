@@ -1,6 +1,8 @@
 package com.zhuxiaoming.kr36.news.details;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.StrictMode;
 import android.text.Html;
@@ -59,7 +61,7 @@ public class NewsDetailsActivity extends BaseActivity {
     protected void initData() {
         Intent intent = getIntent();
         String key = intent.getStringExtra("key");
-        String id = intent.getStringExtra(key);
+        final String id = intent.getStringExtra(key);
         if (id != null) {
             VolleySingle.addRequest(beforeUrl + id, DetailsBean.class,
                     new Response.Listener<DetailsBean>() {
@@ -88,9 +90,7 @@ public class NewsDetailsActivity extends BaseActivity {
 
         //这里面的resource就是fromhtml函数的第一个参数里面的含有的url
         // 获取网路图片
-        imgGetter = new Html.ImageGetter()
-
-        {
+        imgGetter = new Html.ImageGetter() {
             public Drawable getDrawable(String source) {
                 Log.i("RG", "source---?>>>" + source);
                 Drawable drawable = null;
@@ -106,8 +106,7 @@ public class NewsDetailsActivity extends BaseActivity {
                 DisplayMetrics dm = new DisplayMetrics();
                 // 获取屏幕信息
                 getWindowManager().getDefaultDisplay().getMetrics(dm);
-                drawable.setBounds(0, 0, dm.widthPixels - 180,
-                        (dm.widthPixels - 180) / drawable.getIntrinsicWidth() * drawable.getIntrinsicHeight());
+                drawable.setBounds(0, 0, (dm.widthPixels - 180), (dm.widthPixels - 180) / drawable.getIntrinsicWidth() * drawable.getIntrinsicHeight());
 //                drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
 
                 Log.i("RG", "url---?>>>" + url);

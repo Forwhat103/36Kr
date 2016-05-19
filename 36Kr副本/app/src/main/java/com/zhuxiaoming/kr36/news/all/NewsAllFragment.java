@@ -24,7 +24,6 @@ import com.zhuxiaoming.kr36.base.MyApplication;
 import com.zhuxiaoming.kr36.news.NewsBean;
 import com.zhuxiaoming.kr36.news.activity.ActivityAty;
 import com.zhuxiaoming.kr36.news.details.NewsDetailsActivity;
-import com.zhuxiaoming.kr36.util.SwipeRefreshLoadingLayout;
 import com.zhuxiaoming.kr36.util.VolleySingle;
 
 import java.util.ArrayList;
@@ -50,6 +49,7 @@ public class NewsAllFragment extends BaseFragment {
     private View cycleView;// 轮播图
     private NewsBean datas;
     private PullToRefreshListView ptrf;
+    int pageSize = 20;
 
     @Override
     protected int initLayout() {
@@ -145,10 +145,27 @@ public class NewsAllFragment extends BaseFragment {
                 Toast.makeText(MyApplication.getContext(), "刷新完毕", Toast.LENGTH_SHORT).show();
             }
 
+
             @Override
             public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
+
                 // 上拉加载
                 Toast.makeText(MyApplication.getContext(), "加载完毕", Toast.LENGTH_SHORT).show();
+                pageSize += 20;
+                Log.d("NewsAllFragment", "-------------:" + pageSize);
+                VolleySingle.addRequest("https://rong.36kr.com/api/mobi/news?pageSize=" + pageSize + "&columnId=all&pagingAction=up", NewsBean.class,
+                        new Response.Listener<NewsBean>() {
+                            @Override
+                            public void onResponse(NewsBean response) {
+                                newsAllAdapter.setDatas(response);
+                                datas = response;
+                                ptrf.onRefreshComplete();// 取消动画
+                            }
+                        }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                            }
+                        });
             }
         });
         newsAllAdapter = new NewsAllAdapter(getContext());
@@ -160,7 +177,9 @@ public class NewsAllFragment extends BaseFragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), NewsDetailsActivity.class);
                 intent.putExtra("key", "allId");
-                intent.putExtra("allId", datas.getData().getData().get(position).getFeedId());
+                if (datas != null) {
+                    intent.putExtra("allId", datas.getData().getData().get(position - 2).getFeedId());
+                }
                 startActivity(intent);
             }
         });
@@ -243,6 +262,7 @@ public class NewsAllFragment extends BaseFragment {
             view.addView(imageViews.get(position));
             return imageViews.get(position);
         }
+
 
 
     }
