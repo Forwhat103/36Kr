@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import com.zhuxiaoming.kr36.R;
 import com.zhuxiaoming.kr36.news.NewsBean;
+import com.zhuxiaoming.kr36.util.FormatDisplayTime;
 
 import java.text.SimpleDateFormat;
 
@@ -57,12 +58,12 @@ public class NewsAllAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         String type = datas.getData().getData().get(position).getColumnName();
-        Long date = datas.getData().getData().get(position).getPublishTime();
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String time = new FormatDisplayTime().formatDisplayTime(sdf.format(datas.getData().getData().get(position).getPublishTime()), "yyyy-MM-dd HH:mm:ss");
+        viewHolder.dateTv.setText(time);
         viewHolder.nameTv.setText(datas.getData().getData().get(position).getUser().getName());
         viewHolder.contentTv.setText(datas.getData().getData().get(position).getTitle());
         viewHolder.typeTv.setText(type);
-        viewHolder.dateTv.setText(sdf.format(date));
         Picasso.with(context).load(datas.getData().getData().get(position).getFeatureImg()).placeholder(R.mipmap.equity_icon_founding_time).error(R.mipmap.common_bounced_icon_warning).into(viewHolder.imageView);
         if (type != null) {
             switch (type) {

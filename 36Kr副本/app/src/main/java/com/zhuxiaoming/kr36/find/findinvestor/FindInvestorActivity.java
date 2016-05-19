@@ -24,8 +24,8 @@ import java.util.List;
 public class FindInvestorActivity extends BaseActivity implements View.OnClickListener {
     private ListView findInvestorLv;
     private FindInvestorAdapter findInvestorAdapter;
-    private ImageView backIv;
-    private TextView titleTv;
+    private ImageView backIv;// 标题栏返回按钮
+    private TextView titleTv;// 标题
 
     @Override
     protected int getLayout() {

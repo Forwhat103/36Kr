@@ -7,9 +7,11 @@
     <include layout="@layout/tool_bar_find" />
 
     <LinearLayout
+        android:id="@+id/mine_fragment_login_ll"
         android:layout_width="match_parent"
         android:layout_height="130dp"
         android:background="@color/colorTabBarText"
+        android:clickable="true"
         android:orientation="horizontal"
         android:padding="30dp">
 
@@ -18,8 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@mipmap/head_image"
-            />
+            android:src="@mipmap/head_image" />
 
         <TextView
             android:layout_width="0dp"
@@ -56,9 +57,11 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
+                    android:id="@+id/mine_fragment_message_ll"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:clickable="true"
                     android:orientation="horizontal"
                     android:padding="30dp">
 
@@ -76,9 +79,11 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/mine_fragment_order_ll"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:clickable="true"
                     android:orientation="horizontal"
                     android:padding="30dp">
 
@@ -99,88 +104,106 @@
 
             <include layout="@layout/parting_line" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@android:color/white">
-
-                <ImageView
-                    android:id="@+id/mine_account_image_iv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="15dp"
-                    android:src="@mipmap/mine_icon_account" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/mine_account_image_iv"
-                    android:text="账号信息" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="15dp"
-                    android:src="@mipmap/equity_icon_list_arrow" />
-
-            </RelativeLayout>
-
-            <include layout="@layout/parting_line" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:background="@android:color/white"
-                android:orientation="horizontal">
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="15dp"
-                    android:src="@mipmap/mine_icon_authentication" />
+                <include layout="@layout/parting_line" />
 
-                <TextView
-                    android:layout_width="0dp"
+                <RelativeLayout
+                    android:id="@+id/mine_fragment_info_rl"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:text="跟投人认证" />
+                    android:background="@android:color/white"
+                    android:clickable="true">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="5dp"
-                    android:src="@mipmap/mine_icon_hot" />
+                    <ImageView
+                        android:id="@+id/mine_account_image_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="15dp"
+                        android:src="@mipmap/mine_icon_account" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="新人专享500元"
-                    android:textColor="@color/colorNewsItemNameAndTime" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/mine_account_image_iv"
+                        android:text="账号信息" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="15dp"
+                        android:src="@mipmap/equity_icon_list_arrow" />
+
+                </RelativeLayout>
+
+                <include layout="@layout/parting_line" />
+
+                <LinearLayout
+                    android:id="@+id/mine_fragment_authentication_ll"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="15dp"
-                    android:src="@mipmap/equity_icon_list_arrow" />
+                    android:background="@android:color/white"
+                    android:clickable="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="15dp"
+                        android:src="@mipmap/mine_icon_authentication" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:text="跟投人认证" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="5dp"
+                        android:src="@mipmap/mine_icon_hot" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="新人专享500元"
+                        android:textColor="@color/colorNewsItemNameAndTime" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="15dp"
+                        android:src="@mipmap/equity_icon_list_arrow" />
+                </LinearLayout>
+
+                <include layout="@layout/parting_line" />
+
             </LinearLayout>
 
             <include layout="@layout/parting_line" />
 
+
             <LinearLayout
+                android:id="@+id/mine_fragment_favorite_ll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
+                android:clickable="true"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -208,9 +231,11 @@
             <include layout="@layout/parting_line" />
 
             <LinearLayout
+                android:id="@+id/mine_fragment_company_ll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
+                android:clickable="true"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -238,9 +263,11 @@
             <include layout="@layout/parting_line" />
 
             <LinearLayout
+                android:id="@+id/mine_fragment_coupon_ll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
+                android:clickable="true"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -269,9 +296,11 @@
             <include layout="@layout/parting_line" />
 
             <LinearLayout
+                android:id="@+id/mine_fragment_understand_ll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
+                android:clickable="true"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -300,10 +329,12 @@
             <include layout="@layout/parting_line" />
 
             <LinearLayout
+                android:id="@+id/mine_fragment_hot_line_ll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@android:color/white"
+                android:clickable="true"
                 android:orientation="horizontal">
 
                 <ImageView

@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:paddingBottom="@dimen/cycle_view_ball_margin_side"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="@dimen/cycle_view_ball_margin_side">
 
         <View
             android:id="@+id/dot_0"
@@ -47,6 +47,45 @@
             android:layout_marginLeft="@dimen/cycle_view_ball_margin"
             android:layout_marginRight="@dimen/cycle_view_ball_margin"
             android:background="@drawable/dot_normal" />
+
+        <View
+            android:id="@+id/dot_4"
+            android:layout_width="@dimen/cycle_view_ball_size"
+            android:layout_height="@dimen/cycle_view_ball_size"
+            android:layout_marginLeft="@dimen/cycle_view_ball_margin"
+            android:layout_marginRight="@dimen/cycle_view_ball_margin"
+            android:background="@drawable/dot_normal" />
+
+        <View
+            android:id="@+id/dot_5"
+            android:layout_width="@dimen/cycle_view_ball_size"
+            android:layout_height="@dimen/cycle_view_ball_size"
+            android:layout_marginLeft="@dimen/cycle_view_ball_margin"
+            android:layout_marginRight="@dimen/cycle_view_ball_margin"
+            android:background="@drawable/dot_normal" />
+
+        <View
+            android:id="@+id/dot_6"
+            android:layout_width="@dimen/cycle_view_ball_size"
+            android:layout_height="@dimen/cycle_view_ball_size"
+            android:layout_marginLeft="@dimen/cycle_view_ball_margin"
+            android:layout_marginRight="@dimen/cycle_view_ball_margin"
+            android:background="@drawable/dot_normal" />
+
+        <View
+            android:id="@+id/dot_7"
+            android:layout_width="@dimen/cycle_view_ball_size"
+            android:layout_height="@dimen/cycle_view_ball_size"
+            android:layout_marginLeft="@dimen/cycle_view_ball_margin"
+            android:layout_marginRight="@dimen/cycle_view_ball_margin"
+            android:background="@drawable/dot_normal" />
+
     </LinearLayout>
+
+    <!-- 主题图片 -->
+    <!--<com.zhuxiaoming.kr36.news.all.SlideShowView-->
+    <!--android:id="@+id/slideshowView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/news_cycle_view_height"/>-->
 
 </RelativeLayout>

@@ -4,16 +4,19 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
+import android.text.Layout;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zhuxiaoming.kr36.R;
@@ -25,6 +28,9 @@ import com.zhuxiaoming.kr36.news.NewsFragment;
 import com.zhuxiaoming.kr36.news.all.NewsAllFragment;
 import com.zhuxiaoming.kr36.news.earlyitem.EarlyItemFragment;
 import com.zhuxiaoming.kr36.news.krtv.KrTvFragment;
+
+import org.greenrobot.eventbus.EventBus;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +47,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     private NavigationView mainNv;// 创建侧滑导航对象
     private ImageView backIv;// 抽屉返回按钮
     private View navigationHeadView;// 抽屉的头视图
-    private DrawerBroadcast drawerBroadcast;
+    private DrawerBroadcast drawerBroadcast;// 打开抽屉的广播
 
 
     @Override
@@ -57,7 +63,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         mainNv = bindView(R.id.main_nv);
         navigationHeadView = LayoutInflater.from(this).inflate(R.layout.navigation_header, null);
         backIv = (ImageView) navigationHeadView.findViewById(R.id.navigation_header_back_iv);
-
+        navigationHeadView = LayoutInflater.from(this).inflate(R.layout.navigation_header, null);
+        View titleBarView = LayoutInflater.from(this).inflate(R.layout.tool_bar_news, null);
     }
 
     @Override
@@ -84,6 +91,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         mainNv.setItemIconTintList(null);// 设置抽屉菜单图标恢复本来的颜色
     }
 
+
     // 添加Fragment数据
     private void initFragment() {
         fragments = new ArrayList<>();
@@ -96,30 +104,58 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     // 设置侧滑导航栏的点击事件
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        item.setChecked(false);//点击了把它设为不选中状态
+        Bundle urlArg = new Bundle();
+        EarlyItemFragment fragment = new EarlyItemFragment();
         switch (item.getItemId()) {
             case R.id.navigation_header_item_back:
                 // 点击返回
                 mainDl.closeDrawers();// 关闭抽屉
-                item.setChecked(false);//点击了把它设为不选中状态
                 break;
             case R.id.navigation_header_item_all:
                 // 点击全部item
                 mainDl.closeDrawers();// 关闭抽屉
                 getSupportFragmentManager().beginTransaction().replace(R.id.news_frame, new NewsAllFragment()).commit();
-                item.setChecked(false);//点击了把它设为不选中状态
+                EventBus.getDefault().post(new String("新闻"));
                 break;
-            case R.id.navigation_header_item_early:
-                // 早期项目
-                getSupportFragmentManager().beginTransaction().replace(R.id.news_frame, new EarlyItemFragment()).commit();
-                Toast.makeText(MainActivity.this, "早期项目", Toast.LENGTH_SHORT).show();
-                item.setChecked(false);//点击了把它设为不选中状态
+            case R.id.navigation_header_item_early:// 早期项目
+                urlArg.putInt("urlId",67);
+                fragment.setArguments(urlArg);
+                getSupportFragmentManager().beginTransaction().replace(R.id.news_frame, fragment).commit();
+                EventBus.getDefault().post(new String("早期项目"));
                 break;
-            case R.id.navigation_header_item_tv:
-                // 氪TV
+            case R.id.navigation_header_item_after_b_wheel:// B轮后
+                urlArg.putInt("urlId",68);
+                fragment.setArguments(urlArg);
+                getSupportFragmentManager().beginTransaction().replace(R.id.news_frame, fragment).commit();
+                EventBus.getDefault().post(new String("B轮后"));
+                break;
+            case R.id.navigation_header_item_big_company:// 大公司
+                urlArg.putInt("urlId",23);
+                fragment.setArguments(urlArg);
+                getSupportFragmentManager().beginTransaction().replace(R.id.news_frame, fragment).commit();
+                EventBus.getDefault().post(new String("大公司"));
+                break;
+            case R.id.navigation_header_item_capital:// 资本
+                urlArg.putInt("urlId",69);
+                fragment.setArguments(urlArg);
+                getSupportFragmentManager().beginTransaction().replace(R.id.news_frame, fragment).commit();
+                EventBus.getDefault().post(new String("资本"));
+                break;
+            case R.id.navigation_header_item_depth:// 深度
+                urlArg.putInt("urlId",70);
+                fragment.setArguments(urlArg);
+                getSupportFragmentManager().beginTransaction().replace(R.id.news_frame, fragment).commit();
+                EventBus.getDefault().post(new String("深度"));
+                break;
+            case R.id.navigation_header_item_research:// 研究
+                urlArg.putInt("urlId",71);
+                fragment.setArguments(urlArg);
+                getSupportFragmentManager().beginTransaction().replace(R.id.news_frame, fragment).commit();
+                EventBus.getDefault().post(new String("研究"));
+                break;
+            case R.id.navigation_header_item_tv:// 氪TV
                 getSupportFragmentManager().beginTransaction().replace(R.id.news_frame, new KrTvFragment()).commit();
-                Toast.makeText(MainActivity.this, "氪TV", Toast.LENGTH_SHORT).show();
-                item.setChecked(false);//点击了把它设为不选中状态
+                EventBus.getDefault().post(new String("氪TV"));
                 break;
         }
         item.setChecked(false);//点击了把它设为不选中状态
@@ -162,11 +198,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 mainDl.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
                 break;
             case 1:
-                mainDl.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
-                break;
             case 2:
-                mainDl.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
-                break;
             case 3:
                 mainDl.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
                 break;

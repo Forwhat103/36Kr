@@ -4,9 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="早期项目" />
+        android:id="@+id/early_item_fragment_lv">
+
+    </ListView>
 </LinearLayout>

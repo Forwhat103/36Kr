@@ -4,6 +4,13 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <!-- Login界面 -->
+    <!-- 背景颜色 -->
+    <color name="colorLoginBackgroundStart">#1A86D2</color>
+    <color name="colorLoginBackgroundEnd">#4285F4</color>
+    <!-- Tab文字颜色 -->
+    <color name="colorLoginTabText">#74AEF7</color>
+
     <!-- 底部TabLayout -->
 
     <!-- 间隔线的颜色 -->
