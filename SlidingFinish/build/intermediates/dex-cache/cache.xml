@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ac4a87fde12719061b80391dd98e4f0c667fc9cc">
+        <dex dex="/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0f88a28bde19c27f58f39305e476d8ee1362e673/classes.dex" />
+    </item>
+    <item
+        jar="/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a91b72bd4e32114fff436b1847a1752184caa94a">
+        <dex dex="/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d55ada4c8d1623a6e1bf006204a6dbf220c9a9e2/classes.dex" />
+    </item>
+    <item
+        jar="/Users/dllo/Desktop/AndroidTool/android-sdk-macosx/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-v4-18.0.0_17c3f648b72d2f4a577978bbf9f16b171e7ff62e/classes.dex" />
+    </item>
+
+</items>

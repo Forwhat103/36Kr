@@ -1,10 +1,12 @@
 package com.zhuxiaoming.kr36.base;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -12,13 +14,12 @@ import android.view.ViewGroup;
  * Created by zhuxiaoming on 16/5/9.
  */
 public abstract class BaseFragment extends Fragment {
-    private Context context;// 创建Context的对象
+    protected Context context;// 创建Context的对象
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        // context从依附的Activity上获取Context对象
-        context = this.context;
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        context = activity;
     }
 
     // 初始化视图
@@ -44,11 +45,12 @@ public abstract class BaseFragment extends Fragment {
 
     protected abstract int initLayout();
 
-    protected abstract int initView();
+    protected abstract void initView();
 
     protected abstract void initData();
 
     protected <T extends View> T bindView(int id) {
         return (T) getView().findViewById(id);
     }
+
 }

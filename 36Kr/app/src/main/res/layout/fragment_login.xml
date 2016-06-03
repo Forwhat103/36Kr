@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/login_fragment_padding">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/login_fragment_user_hint_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/setting_margin_screen"
+                android:text="@string/user_name"
+                android:textColor="@color/colorNewsItemNameAndTime"
+                android:textSize="@dimen/change_code_text_size" />
+
+            <EditText
+                android:id="@+id/login_fragment_user_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/setting_margin_screen"
+                android:background="@null"
+                android:singleLine="true"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/change_code_text_size"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/login_fragment_user_delete_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/setting_margin_screen"
+            android:clickable="true"
+            android:src="@mipmap/login_icon_delete"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:background="@color/login_fragment" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/login_fragment_code_hint_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/login_fragment_padding"
+                android:text="@string/password"
+                android:textColor="@color/colorNewsItemNameAndTime"
+                android:textSize="@dimen/change_code_text_size" />
+
+            <EditText
+                android:id="@+id/login_fragment_code_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/login_fragment_padding"
+                android:background="@null"
+                android:singleLine="true"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/change_code_text_size"
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/login_fragment_code_delete_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/login_fragment_padding"
+            android:clickable="true"
+            android:src="@mipmap/login_icon_delete"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/login_fragment_eye_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/setting_margin_screen"
+            android:layout_marginTop="@dimen/login_fragment_padding"
+            android:background="@drawable/selector_eye"
+            android:button="@null"
+            android:clickable="true"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:background="@color/login_fragment" />
+
+    <TextView
+        android:id="@+id/login_fragment_miss_code_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="5dp"
+        android:text="@string/lost_code"
+        android:textColor="@drawable/selector_text"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/login_fragment_login_tv"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/selector_button"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="@string/login"
+        android:textColor="@drawable/selector_text" />
+
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="45dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/login_fragment_wx_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/login_icon_wechat" />
+
+        <ImageView
+            android:id="@+id/login_fragment_qq_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/login_icon_qq" />
+
+        <ImageView
+            android:id="@+id/login_fragment_weibo_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/login_icon_weibo" />
+    </RelativeLayout>
+</LinearLayout>

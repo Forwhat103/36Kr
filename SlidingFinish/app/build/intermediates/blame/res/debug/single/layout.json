@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/build/intermediates/res/merged/debug/layout/activity_scroll.xml",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/src/main/res/layout/activity_scroll.xml"
+    },
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/build/intermediates/res/merged/debug/layout/activity_viewpager.xml",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/src/main/res/layout/activity_viewpager.xml"
+    },
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/build/intermediates/res/merged/debug/layout/activity_abslistview.xml",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/src/main/res/layout/activity_abslistview.xml"
+    },
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/build/intermediates/res/merged/debug/layout/activity_normal.xml",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/src/main/res/layout/activity_normal.xml"
+    },
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/build/intermediates/res/merged/debug/layout/base.xml",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/src/main/res/layout/base.xml"
+    }
+]

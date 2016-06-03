@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/parting_line" />
+
+    <TextView
+        android:id="@+id/recent_event_type_all"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/recent_event_menu_background"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/login_quit_margin_screen"
+        android:text="@string/all"
+        android:textSize="@dimen/find_recent_aty_kind_size" />
+
+    <include layout="@layout/parting_line" />
+
+    <TextView
+        android:id="@+id/recent_event_type_demo_day"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/recent_event_menu_background"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/login_quit_margin_screen"
+        android:text="@string/recent_event_type_demo_day"
+        android:textSize="@dimen/find_recent_aty_kind_size" />
+
+    <include layout="@layout/parting_line" />
+
+    <TextView
+        android:id="@+id/recent_event_type_kr_zone"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/recent_event_menu_background"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/login_quit_margin_screen"
+        android:text="@string/recent_event_type_kr_zone"
+        android:textSize="@dimen/find_recent_aty_kind_size" />
+
+    <include layout="@layout/parting_line" />
+
+    <TextView
+        android:id="@+id/recent_event_type_invest"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/recent_event_menu_background"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/login_quit_margin_screen"
+        android:text="@string/recent_event_type_invest"
+        android:textSize="@dimen/find_recent_aty_kind_size" />
+
+    <include layout="@layout/parting_line" />
+
+    <TextView
+        android:id="@+id/recent_event_type_service"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/recent_event_menu_background"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/login_quit_margin_screen"
+        android:text="@string/recent_event_type_service"
+        android:textSize="@dimen/find_recent_aty_kind_size" />
+
+    <include layout="@layout/parting_line" />
+
+    <TextView
+        android:id="@+id/recent_event_type_financing"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/recent_event_menu_background"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/login_quit_margin_screen"
+        android:text="@string/recent_event_type_financing"
+        android:textSize="@dimen/find_recent_aty_kind_size" />
+
+    <View
+        android:id="@+id/recent_event_type_space"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorKrTvBackground"></View>
+</LinearLayout>

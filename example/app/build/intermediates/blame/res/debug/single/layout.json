@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/example/app/build/intermediates/res/merged/debug/layout/umeng_example_analytics.xml",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/example/app/src/main/res/layout/umeng_example_analytics.xml"
+    },
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/example/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/example/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/example/app/build/intermediates/res/merged/debug/layout/umeng_example_game.xml",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/example/app/src/main/res/layout/umeng_example_game.xml"
+    },
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/example/app/build/intermediates/res/merged/debug/layout/umeng_example_analytics_fragment_tabs.xml",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/example/app/src/main/res/layout/umeng_example_analytics_fragment_tabs.xml"
+    },
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/example/app/build/intermediates/res/merged/debug/layout/umeng_example_analytics_fragment_stack.xml",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/example/app/src/main/res/layout/umeng_example_analytics_fragment_stack.xml"
+    },
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/example/app/build/intermediates/res/merged/debug/layout/umeng_example_analytics_webview.xml",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/example/app/src/main/res/layout/umeng_example_analytics_webview.xml"
+    }
+]

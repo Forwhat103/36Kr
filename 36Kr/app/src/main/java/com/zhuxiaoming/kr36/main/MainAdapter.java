@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class MainAdapter extends FragmentPagerAdapter {
     private List<Fragment> fragments;// 创建Fragment集合的对象
-    private String[] titles = {"新闻", "发现", "股权投资", "我的"};
+    private String[] titles = {"新闻", "股权投资", "发现", "我的"};
 
     public MainAdapter(FragmentManager fm) {
         super(fm);

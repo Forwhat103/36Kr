@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/build/intermediates/res/merged/debug/anim/base_slide_remain.xml",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/src/main/res/anim/base_slide_remain.xml"
+    },
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/build/intermediates/res/merged/debug/anim/base_slide_right_in.xml",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/src/main/res/anim/base_slide_right_in.xml"
+    },
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/build/intermediates/res/merged/debug/anim/base_slide_right_out.xml",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/src/main/res/anim/base_slide_right_out.xml"
+    }
+]

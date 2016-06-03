@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/bg.xml",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/src/main/res/drawable-hdpi/bg.xml"
+    },
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/shadow.xml",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/src/main/res/drawable-hdpi/shadow.xml"
+    },
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_launcher.png",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/shadow_left.png",
+        "source": "/Users/dllo/Desktop/githubspace/36Kr/SlidingFinish/app/src/main/res/drawable-hdpi/shadow_left.png"
+    }
+]

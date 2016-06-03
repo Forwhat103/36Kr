@@ -9,19 +9,17 @@
     tools:context=".main.MainActivity">
 
     <LinearLayout
+        android:id="@+id/main_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <include
-            android:id="@+id/main_tool_bar"
-            layout="@layout/tool_bar" />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/main_vp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"></android.support.v4.view.ViewPager>
+
 
         <View
             android:layout_width="match_parent"
@@ -33,16 +31,19 @@
             android:id="@+id/main_tab"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/white"
             app:tabIndicatorHeight="0dp"
-            app:tabSelectedTextColor="@color/colorTabBarText"></android.support.design.widget.TabLayout>
+            app:tabSelectedTextColor="@color/colorTabBarText"
+            app:tabTextColor="@color/colorNewsItemNameAndTime"></android.support.design.widget.TabLayout>
 
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/main_nv"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/news_drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="left"
+        android:background="@android:color/white"
         app:menu="@menu/navigation_menu"></android.support.design.widget.NavigationView>
 
 

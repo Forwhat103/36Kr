@@ -1,13 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/news_item_iv"
+        android:layout_width="@dimen/early_image_wid"
+        android:layout_height="@dimen/guide_button_mar"
+        android:layout_margin="@dimen/news_item_in_margin"
+        android:scaleType="fitXY"/>
 
     <TextView
-        android:id="@+id/news_lv_item_name_tv"
+        android:id="@+id/news_item_content_iv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="name" />
+        android:layout_margin="@dimen/news_item_in_margin"
+        android:layout_toRightOf="@id/news_item_iv"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/colorNewsItemContent"
+        android:textSize="@dimen/news_item_content_size" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/news_item_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/news_item_iv"
+        android:layout_marginLeft="@dimen/news_item_in_margin"
+        android:layout_toRightOf="@id/news_item_iv"
+        android:textColor="@color/colorNewsItemNameAndTime"
+        android:textSize="@dimen/news_item_name_size" />
+
+    <TextView
+        android:id="@+id/news_item_date_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/news_item_name_tv"
+        android:layout_marginLeft="@dimen/news_item_in_margin"
+        android:layout_toRightOf="@id/news_item_name_tv"
+        android:textColor="@color/colorNewsItemNameAndTime"
+        android:textSize="@dimen/news_item_name_size" />
+
+    <TextView
+        android:id="@+id/news_item_type_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/news_item_iv"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/news_item_in_margin"
+        android:textColor="@color/colorNewsItemNameAndTime"
+        android:textSize="@dimen/news_item_name_size" />
+</RelativeLayout>

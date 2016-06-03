@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@mipmap/guidepage_ph3" />
+
+    <TextView
+        android:id="@+id/guide_aty_three_turn_tv"
+        android:layout_width="@dimen/guide_button_wid"
+        android:layout_height="@dimen/guide_button_hei"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/guide_button_mar"
+        android:alpha="0.5"
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="@string/guide_button_text" />
+</RelativeLayout>

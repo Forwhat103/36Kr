@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/welcome_aty_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/welcome_aty_turn_tv"
+        android:layout_width="@dimen/welcome_aty_turn_tv_wid"
+        android:layout_height="@dimen/welcome_aty_turn_tv_hei"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/welcome_aty_turn_tv_mar"
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="@string/skip" />
+</RelativeLayout>

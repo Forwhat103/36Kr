@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.zhuxiaoming.kr36.util.RoundImage
+        android:id="@+id/find_investor_item_image"
+        android:layout_width="@dimen/news_details_head_image_size"
+        android:layout_height="@dimen/news_details_head_image_size"
+        android:layout_margin="@dimen/setting_margin_screen"
+        android:src="@mipmap/ic_launcher"
+        app:is_round="true"/>
+
+    <TextView
+        android:id="@+id/find_investor_item_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/find_investor_item_image"
+        android:layout_toRightOf="@id/find_investor_item_image"
+        android:textColor="@color/find_investor_item_name_tv_color"
+        android:textSize="@dimen/find_invest_text_size" />
+
+    <TextView
+        android:id="@+id/find_investor_item_care_field_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/find_investor_item_name_tv"
+        android:layout_below="@id/find_investor_item_name_tv"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:text="@string/find_investor_item_care_field_title_tv"
+        android:textColor="@color/colorToolBarText"
+        android:textSize="@dimen/find_invest_text_size" />
+
+    <TextView
+        android:id="@+id/find_investor_item_invest_stage_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/find_investor_item_name_tv"
+        android:layout_below="@id/find_investor_item_care_field_title_tv"
+        android:layout_marginBottom="@dimen/login_quit_margin_screen"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:text="@string/find_investor_item_invest_stage_title_tv"
+        android:textColor="@color/colorToolBarText"
+        android:textSize="@dimen/find_invest_text_size" />
+
+    <TextView
+        android:id="@+id/find_investor_item_care_field_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/find_investor_item_care_field_title_tv"
+        android:layout_marginLeft="@dimen/normal_margin"
+        android:layout_toRightOf="@id/find_investor_item_care_field_title_tv"
+        android:textColor="@color/find_investor_item_care_field_tv_color"
+        android:textSize="@dimen/find_invest_text_size" />
+
+    <TextView
+        android:id="@+id/find_investor_item_invest_stage_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/find_investor_item_invest_stage_title_tv"
+        android:layout_marginLeft="@dimen/normal_margin"
+        android:layout_toRightOf="@id/find_investor_item_invest_stage_title_tv"
+        android:textColor="@color/find_investor_item_invest_stage_tv_color"
+        android:textSize="@dimen/find_invest_text_size" />
+
+
+</RelativeLayout>

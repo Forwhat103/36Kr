@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/kr_tv_hei">
+
+    <VideoView
+        android:id="@+id/kr_tv_item_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/kr_tv_item_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY" />
+
+    <ProgressBar
+        android:id="@+id/kr_tv_item_progressbar"
+        android:layout_width="@dimen/news_details_head_image_size"
+        android:layout_height="@dimen/news_details_head_image_size"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorKrTvBackground"
+        android:id="@+id/kr_tv_item_rl">
+
+        <TextView
+            android:id="@+id/kr_tv_item_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/welcome_aty_turn_tv_wid"
+            android:gravity="center"
+            android:maxEms="18"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/find_invest_text_size"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/kr_tv_mar"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/news_icon_krtv" />
+
+            <TextView
+                android:id="@+id/kr_tv_item_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/cycle_view_ball_size"
+                android:text=""
+                android:textSize="@dimen/early_text_size"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

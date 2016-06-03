@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants">
+
+    <ImageView
+        android:id="@+id/invest_item_logo_iv"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="20dp" />
+
+    <TextView
+        android:id="@+id/invest_item_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/invest_item_logo_iv"
+        android:layout_toRightOf="@id/invest_item_logo_iv"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/invest_item_care_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:src="@mipmap/equity_tips_icon_first" />
+
+    <TextView
+        android:id="@+id/invest_item_info_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/invest_item_logo_iv"
+        android:layout_toLeftOf="@id/invest_item_care_iv"
+        android:layout_toRightOf="@id/invest_item_logo_iv"
+        android:ellipsize="end"
+        android:maxLines="1" />
+
+    <ImageView
+        android:id="@+id/invest_item_big_iv"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/invest_item_logo_iv"
+        android:layout_marginBottom="20dp"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/invest_item_leader_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/invest_item_big_iv"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="领投方"
+        android:textColor="@color/colorToolBarText" />
+
+    <TextView
+        android:id="@+id/invest_item_leader_content_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/invest_item_big_iv"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/colorToolBarText" />
+
+    <com.zhuxiaoming.kr36.util.NoScrollListView
+        android:id="@+id/invest_item_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/invest_item_leader_tv"
+        android:layout_marginBottom="10dp"
+        android:divider="@null"></com.zhuxiaoming.kr36.util.NoScrollListView>
+
+    <View
+        android:id="@+id/invest_item_parting_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/parting_line_height"
+        android:layout_below="@+id/invest_item_lv"
+        android:layout_marginBottom="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:background="@color/colorPartingLine" />
+
+    <TextView
+        android:id="@+id/invest_item_see_tv"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/invest_item_parting_line"
+        android:layout_margin="20dp"
+        android:background="@drawable/shape_invest_see"
+        android:gravity="center"
+        android:text="去看看"
+        android:textColor="@color/colorToolBarText"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/invest_item_subscribe_tv"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/invest_item_parting_line"
+        android:layout_margin="20dp"
+        android:background="@mipmap/icon_activity_rengou_bg"
+        android:gravity="center"
+        android:text="认购"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/invest_item_fundraising_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/invest_item_parting_line"
+        android:layout_margin="20dp"
+        android:textColor="@color/colorTabBarText"
+        android:textSize="16sp" />
+
+    <ProgressBar
+        android:id="@+id/invest_item_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_alignBottom="@id/invest_item_see_tv"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="20dp"
+        android:layout_toLeftOf="@id/invest_item_see_tv"
+        android:max="100" />
+
+    <TextView
+        android:id="@+id/invest_item_fundraising_progress_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/invest_item_progress_bar"
+        android:layout_margin="8dp"
+        android:layout_toLeftOf="@id/invest_item_see_tv"
+        android:textColor="@color/colorNewsItemNameAndTime"
+        android:textSize="12sp" />
+
+
+</RelativeLayout>

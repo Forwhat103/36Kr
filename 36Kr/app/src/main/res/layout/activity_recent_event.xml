@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <include layout="@layout/title_bar_content" />
+
+    <include layout="@layout/parting_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/recent_event_type_rl"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/recent_event_type_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/recent_event_type_tv"
+                android:textColor="@color/colorToolBarText"
+                android:textSize="@dimen/find_recent_aty_kind_size" />
+
+            <ImageView
+                android:id="@+id/recent_event_type_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/find_recent_aty_kind_margin_arrow"
+                android:background="@mipmap/common_filter_arrow_down" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/recent_event_time_rl"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/recent_event_time_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/recent_event_time_tv"
+                android:textColor="@color/colorToolBarText"
+                android:textSize="@dimen/find_recent_aty_kind_size" />
+
+            <ImageView
+                android:id="@+id/recent_event_time_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/find_recent_aty_kind_margin_arrow"
+                android:background="@mipmap/common_filter_arrow_down" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <include layout="@layout/parting_line" />
+
+    <ListView
+        android:id="@+id/recent_event_lv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></ListView>
+
+</LinearLayout>

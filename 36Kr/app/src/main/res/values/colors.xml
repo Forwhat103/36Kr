@@ -3,14 +3,76 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- Login界面 -->
+    <!-- 背景颜色 -->
+    <color name="colorLoginBackgroundStart">#1A86D2</color>
+    <color name="colorLoginBackgroundEnd">#4285F4</color>
+    <!-- 按钮文字颜色 -->
+    <color name="colorLoginButtonText">#CCCCCC</color>
+    <!-- Tab文字颜色 -->
+    <color name="colorLoginTabText">#74AEF7</color>
+
+    <!-- 底部TabLayout -->
+
     <!-- 间隔线的颜色 -->
-    <color name="colorPartingLine">#EDEDED</color>
+    <color name="colorPartingLine">#E3E3E3</color>
     <!-- tabLayout的文字颜色-->
     <color name="colorTabBarText">#4285F4</color>
     <!-- toolbar的文字颜色-->
     <color name="colorToolBarText">#5A626D</color>
+
+    <!-- 新闻界面 -->
+
+    <!-- 新闻界面Item的作者名字和时间颜色 -->
+    <color name="colorNewsItemNameAndTime">#969FA9</color>
+    <!-- 新闻界面Item的内容颜色 -->
+    <color name="colorNewsItemContent">#222C38</color>
+    <!-- 新闻界面全部Item的颜色-->
+    <color name="colorNewsAll">#4285F4</color>
+    <!-- 新闻界面早期项目Item的颜色-->
+    <color name="colorNewsEarlyItem">#0BBC6B</color>
+    <!-- 新闻界面B轮后Item的颜色-->
+    <color name="colorNewsAfterBWheel">#1AC3F4</color>
+    <!-- 新闻界面大公司Item的颜色-->
+    <color name="colorNewsBigCompany">#4FA7FE</color>
+    <!-- 新闻界面资本Item的颜色-->
+    <color name="colorNewsCapital">#1660D9</color>
+    <!-- 新闻界面深度Item的颜色-->
+    <color name="colorNewsDepth">#F04666</color>
+    <!-- 新闻界面研究Item的颜色-->
+    <color name="colorNewsResearch">#FF9600</color>
+    <!-- 新闻界面氪TVItem的颜色-->
+    <color name="colorNewsKrTV">#F45170</color>
+
+    <!-- 新闻详情界面 -->
+    <!-- 作者标签的颜色 -->
+    <color name="colorNewsDetailsTag">#4ECA86</color>
+    <color name="colorKrTvBackground">#5A000000</color>
+
+    <!-- 股权投资界面 -->
+    <!-- 锚定中 -->
+    <color name="colorInvestMaoDing">#FF6E0E</color>
+    <!-- 募资中 -->
+    <color name="colorInvestMuZi">#4285F4</color>
+    <!-- 募资完成 -->
+    <color name="colorInvestMuZiDone">#9BA3AD</color>
+    <!-- 进度条 -->
+    <color name="colorInvestProgressBar">#F77066</color>
+
+    <!-- 发现界面 -->
     <!-- find页面ToolBar的搜索框颜色-->
     <color name="colorFindToolBarSearch">#3A78DF</color>
     <!-- find和mine页面的背景颜色-->
-    <color name="colorFindAndMineBackground">#F9F9F9</color>
+    <color name="colorFindAndMineBackground">#EFEFEF</color>
+    <!-- 近期活动的filter文字颜色-->
+    <color name="colorRecentEventFilterText">#666666</color>
+    <color name="find_investor_item_care_field_tv_color">#969FA9</color>
+    <color name="find_investor_item_invest_stage_tv_color">#FF7317</color>
+    <color name="find_investor_item_name_tv_color">#222C38</color>
+
+    <color name="recent_event_menu_background">#EEEEEE</color>
+    <!-- 股权投资界面 -->
+
+    <color name="login_fragment">#C9C9C9</color>
 </resources>

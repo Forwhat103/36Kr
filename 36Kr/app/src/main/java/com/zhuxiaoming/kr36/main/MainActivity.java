@@ -1,32 +1,32 @@
 package com.zhuxiaoming.kr36.main;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
+import android.content.IntentFilter;
+import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.zhuxiaoming.kr36.R;
 import com.zhuxiaoming.kr36.base.BaseActivity;
 import com.zhuxiaoming.kr36.find.FindFragment;
 import com.zhuxiaoming.kr36.invest.InvestFragment;
 import com.zhuxiaoming.kr36.mine.MineFragment;
-import com.zhuxiaoming.kr36.news.news.NewsFragment;
+import com.zhuxiaoming.kr36.news.NewsFragment;
+import com.zhuxiaoming.kr36.news.all.NewsAllFragment;
 import com.zhuxiaoming.kr36.news.earlyitem.EarlyItemFragment;
 import com.zhuxiaoming.kr36.news.krtv.KrTvFragment;
-import com.zhuxiaoming.kr36.search.SearchActivity;
-import com.zhuxiaoming.kr36.setting.SettingActivity;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,20 +34,17 @@ import java.util.List;
 /**
  * 这是主页
  */
-public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, ViewPager.OnPageChangeListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener, ViewPager.OnPageChangeListener, NavigationView.OnNavigationItemSelectedListener {
     private ViewPager mainVp;// 创建ViewPager对象
     private TabLayout mainTab;// 创建TabLayout对象
     private List<Fragment> fragments;// 创建碎片集合的对象
     private MainAdapter mainAdapter;// 创建主页适配器的对象
     private DrawerLayout mainDl;// 设置抽屉DrawerLayout对象
-    private Toolbar mainTb;// 创建标题栏对象
     private NavigationView mainNv;// 创建侧滑导航对象
-    private ImageView searchIv;// 标题栏搜索按钮
     private ImageView backIv;// 抽屉返回按钮
-    private View navigationHeadView;// 抽屉的头视图
-    private TextView titleTv;// 标题
-    private ImageView settingIv;// 我的界面标题栏设置按钮
-    private LinearLayout searchFrameLl;// 发现界面Toolbar搜索框
+    //    private View navigationHeadView;// 抽屉的头视图
+    private DrawerBroadcast drawerBroadcast;// 打开抽屉的广播
+    Bundle urlArg = new Bundle();// 向Fragment传值
 
     @Override
     protected int getLayout() {
@@ -56,57 +53,52 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     @Override
     protected void initView() {
-        mainVp = (ViewPager) findViewById(R.id.main_vp);
-        mainTab = (TabLayout) findViewById(R.id.main_tab);
-        mainDl = (DrawerLayout) findViewById(R.id.main_dl);
-        mainTb = (Toolbar) findViewById(R.id.main_tool_bar);
-        mainNv = (NavigationView) findViewById(R.id.main_nv);
-        searchIv = (ImageView) findViewById(R.id.tool_bar_search_iv);
-        settingIv = (ImageView) findViewById(R.id.tool_bar_setting_iv);
-        searchFrameLl = (LinearLayout) findViewById(R.id.find_tool_bar_search_ll);
-        titleTv = (TextView) findViewById(R.id.tool_bar_tv);
-        navigationHeadView = LayoutInflater.from(this).inflate(R.layout.navigation_header, null);
-        backIv = (ImageView) navigationHeadView.findViewById(R.id.navigation_header_back_iv);
-
-
+        mainVp = bindView(R.id.main_vp);
+        mainTab = bindView(R.id.main_tab);
+        mainDl = bindView(R.id.main_dl);
+        mainNv = bindView(R.id.main_nv);
+//        navigationHeadView = LayoutInflater.from(this).inflate(R.layout.navigation_header, null);
+//        backIv = (ImageView) navigationHeadView.findViewById(R.id.navigation_header_item_back);
     }
 
     @Override
     protected void initData() {
-        setSupportActionBar(mainTb);// 设置标题栏Toolbar
+//        setSupportActionBar(mainTb);// 设置标题栏Toolbar
         initFragment();// 添加Fragment数据
         mainAdapter = new MainAdapter(getSupportFragmentManager());//初始化适配器
         mainAdapter.setFragments(fragments);// 将Fragment数据添加到适配器
         mainVp.setAdapter(mainAdapter);// 设置ViewPager的适配器
         mainTab.setupWithViewPager(mainVp);// 设置TabLayout的适配器
         initTabs();// 添加Tab数据
-        //设置抽屉DrawerLayout
-        ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle(this, mainDl, mainTb, R.string.drawer_open, R.string.drawer_close);
-        mDrawerToggle.syncState();// 初始化状态
-        mainDl.setDrawerListener(mDrawerToggle);
-        mainNv.addHeaderView(navigationHeadView);
+        mainVp.setOnPageChangeListener(this);
+        mainVp.setOffscreenPageLimit(3);// 参数:缓存当前界面每一侧的界面数
+        // 注册广播
+        drawerBroadcast = new DrawerBroadcast();
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("com.zhuxiaoming.kr36.DRAWER_BC");
+        registerReceiver(drawerBroadcast, filter);
+
+//        backIv.setOnClickListener(this);
+//        mainNv.addHeaderView(navigationHeadView);
         // 设置侧滑导航栏的点击事件
         mainNv.setNavigationItemSelectedListener(this);
-        // 设置标题栏搜索按钮监听事件
-        searchIv.setOnClickListener(this);
-        // 设置抽屉返回按钮监听事件
-        backIv.setOnClickListener(this);
-        // 设置发现界面标题栏搜索框的点击事件
-        searchFrameLl.setOnClickListener(this);
-        // 设置我的界面设置按钮的监听事件
-        settingIv.setOnClickListener(this);
-        // 设置ViewPager页面改变监听
-        mainVp.addOnPageChangeListener(this);
-        // 设置toolbar导航键
-        mainTb.setNavigationIcon(R.mipmap.title_bar_menu);
+        mainNv.setItemIconTintList(null);// 设置抽屉菜单图标恢复本来的颜色
+
+        Intent intent = getIntent();
+        String userName = intent.getStringExtra("userName");
+        if (userName != null) {
+            Log.d("+-+-+-+-", userName);
+            mainVp.setCurrentItem(3);
+        }
     }
+
 
     // 添加Fragment数据
     private void initFragment() {
         fragments = new ArrayList<>();
         fragments.add(new NewsFragment());
-        fragments.add(new FindFragment());
         fragments.add(new InvestFragment());
+        fragments.add(new FindFragment());
         fragments.add(new MineFragment());
     }
 
@@ -114,68 +106,76 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.navigation_header_item_back:
+                // 点击返回
+                mainDl.closeDrawers();// 关闭抽屉
+                break;
             case R.id.navigation_header_item_all:
                 // 点击全部item
-                titleTv.setText("新闻");
-                getSupportFragmentManager().beginTransaction().replace(R.id.main_vp, new NewsFragment()).commit();
+                mainDl.closeDrawers();// 关闭抽屉
+                getSupportFragmentManager().beginTransaction().replace(R.id.news_frame, new NewsAllFragment()).commit();
+                EventBus.getDefault().post(new String("新闻"));
                 break;
-            case R.id.navigation_header_item_early:
-                // 早期项目
-                titleTv.setText("早期项目");
-                getSupportFragmentManager().beginTransaction().replace(R.id.main_vp, new EarlyItemFragment()).commit();
-                Toast.makeText(MainActivity.this, "早期项目", Toast.LENGTH_SHORT).show();
+            case R.id.navigation_header_item_early:// 早期项目
+                itemClick(67, "早期项目");
                 break;
-            case R.id.navigation_header_item_tv:
-                // 氪TV
-                titleTv.setText("氪TV");
-                getSupportFragmentManager().beginTransaction().replace(R.id.main_vp, new KrTvFragment()).commit();
-                Toast.makeText(MainActivity.this, "氪TV", Toast.LENGTH_SHORT).show();
+            case R.id.navigation_header_item_after_b_wheel:// B轮后
+                itemClick(68, "B轮后");
+                break;
+            case R.id.navigation_header_item_big_company:// 大公司
+                itemClick(23, "大公司");
+                break;
+            case R.id.navigation_header_item_capital:// 资本
+                itemClick(69, "资本");
+                break;
+            case R.id.navigation_header_item_depth:// 深度
+                itemClick(70, "深度");
+                break;
+            case R.id.navigation_header_item_research:// 研究
+                itemClick(71, "研究");
+                break;
+            case R.id.navigation_header_item_tv:// 氪TV
+                getSupportFragmentManager().beginTransaction().replace(R.id.news_frame, new KrTvFragment()).commit();
+                EventBus.getDefault().post(new String("氪TV"));
                 break;
         }
-        item.setChecked(false);//点击了把它设为选中状态
+        item.setChecked(false);//点击了把它设为不选中状态
         mainDl.closeDrawers();// 关闭抽屉
         return true;
     }
 
+    // 点击抽屉Item触发的行为
+    public void itemClick(int urlId, String title) {
+        urlArg.putInt("urlId", urlId);
+        EarlyItemFragment fragment = new EarlyItemFragment();// Fragment
+        fragment.setArguments(urlArg);
+        getSupportFragmentManager().beginTransaction().replace(R.id.news_frame, fragment).commit();
+        EventBus.getDefault().post(new String(title));
+    }
+
     // 添加TabLayout的Tab数据
     private void initTabs() {
-        int[] tabs = {R.drawable.selector_news, R.drawable.selector_find, R.drawable.selector_invest, R.drawable.selector_mine};
+        int[] tabs = {R.drawable.selector_news, R.drawable.selector_invest, R.drawable.selector_find, R.drawable.selector_mine};
         for (int i = 0; i < tabs.length; i++) {
             mainTab.getTabAt(i).setIcon(tabs[i]);
         }
     }
 
+    // 监听事件
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.tool_bar_search_iv:
-                // 跳转到搜索界面
-                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.navigation_header_back_iv:
-                // 返回到主界面
-                mainDl.closeDrawers();// 关闭侧滑
-                titleTv.setText("新闻");
-                getSupportFragmentManager().beginTransaction().replace(R.id.main_vp, new NewsFragment()).commit();
-                break;
-            case R.id.find_tool_bar_search_ll:
-                // 跳转到搜索界面
-                Intent intent1 = new Intent(MainActivity.this, SearchActivity.class);
-                startActivity(intent1);
-                break;
-            case R.id.tool_bar_setting_iv:
-                // 跳转到搜索界面
-                Intent intent2 = new Intent(MainActivity.this, SettingActivity.class);
-                startActivity(intent2);
-                break;
+//            case R.id.navigation_header_back_iv:
+//                // 返回到主界面
+//                mainDl.closeDrawers();// 关闭侧滑
+//                break;
         }
     }
 
     // ViewPager的状态改变监听
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-        //这个方法会在屏幕滚动过程中不断被调用。
+        //这个方法会在屏幕滚动过程中不断被调用
     }
 
     @Override
@@ -185,53 +185,35 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         // 如果直接setCurrentItem翻页，那position就和setCurrentItem的参数一致，这种情况在onPageScrolled执行方法前就会立即执行
         switch (position) {
             case 0:
-                // 新闻界面
-                titleTv.setText("新闻");
-//                getSupportFragmentManager().beginTransaction().replace(R.id.main_vp, new NewsFragment()).commit();
-                mainTb.setNavigationIcon(R.mipmap.title_bar_menu);
-                settingIv.setVisibility(View.GONE);
-                searchIv.setVisibility(View.VISIBLE);
-                searchFrameLl.setVisibility(View.GONE);
-                mainTb.setBackgroundColor(Color.rgb(250, 250, 250));// 设置ToolBar的背景颜色
+                mainDl.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
                 break;
             case 1:
-                // 发现界面
-//                mainDl.closeDrawers();// 关闭抽屉
-                titleTv.setText("");
-//                getSupportFragmentManager().beginTransaction().replace(R.id.main_vp, new FindFragment()).commit();
-                mainTb.setNavigationIcon(null);
-                settingIv.setVisibility(View.GONE);
-                searchIv.setVisibility(View.GONE);
-                searchFrameLl.setVisibility(View.VISIBLE);
-                mainTb.setBackgroundColor(Color.rgb(66, 133, 244));// 设置ToolBar的背景颜色
-                break;
             case 2:
-                // 股权投资界面
-//                mainDl.closeDrawers();// 关闭抽屉
-//                getSupportFragmentManager().beginTransaction().replace(R.id.main_vp, new InvestFragment()).commit();
-                titleTv.setText("股权投资");
-                mainTb.setNavigationIcon(null);
-                settingIv.setVisibility(View.GONE);
-                searchIv.setVisibility(View.VISIBLE);
-                searchFrameLl.setVisibility(View.GONE);
-                mainTb.setBackgroundColor(Color.rgb(250, 250, 250));// 设置ToolBar的背景颜色
-                break;
             case 3:
-                // 我的界面
-//                mainDl.closeDrawers();// 关闭抽屉
-                mainNv.setVisibility(View.GONE);
-                titleTv.setText("");
-                mainTb.setNavigationIcon(null);
-                settingIv.setVisibility(View.VISIBLE);
-                searchIv.setVisibility(View.GONE);
-                searchFrameLl.setVisibility(View.GONE);
-                mainTb.setBackgroundColor(Color.rgb(66, 133, 244));// 设置ToolBar的背景颜色
+                mainDl.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
                 break;
         }
+
     }
 
     @Override
     public void onPageScrollStateChanged(int state) {
         // 这个方法在手指操作屏幕的时候发生变化
     }
+
+    // 定义广播
+    class DrawerBroadcast extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // 接收到广播时打开抽屉
+            mainDl.openDrawer(Gravity.LEFT);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(drawerBroadcast);
+    }
+
 }

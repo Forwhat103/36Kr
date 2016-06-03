@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/pop_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mine_popup_call_tv_hei"
+            android:gravity="center"
+            android:text="@string/work_day"
+            android:textColor="@color/colorNewsItemNameAndTime" />
+
+        <include layout="@layout/parting_line" />
+
+        <TextView
+            android:id="@+id/mine_popup_call_tv"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:gravity="center"
+            android:text="@string/cell"
+            android:textColor="@color/colorTabBarText"
+            android:textSize="@dimen/setting_text_size" />
+
+        <include layout="@layout/parting_line" />
+
+        <TextView
+            android:id="@+id/mine_popup_cancel_tv"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textSize="@dimen/setting_text_size" />
+    </LinearLayout>
+</RelativeLayout>

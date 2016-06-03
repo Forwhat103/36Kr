@@ -2,14 +2,137 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- 标题栏的高度 -->
-    <!--<dimen name="title_height">54dp</dimen>-->
-    <!-- 间隔线的粗细 -->
-    <dimen name="parting_line_height">0.3dp</dimen>
+    <!-- 标准距离 -->
+    <dimen name="normal_margin">10dp</dimen>
+    
+    <!-- 标题栏 -->
     <!-- 标题栏文字大小 -->
     <dimen name="title_text_size">18sp</dimen>
     <!-- 标题栏图标距屏幕边缘距离 -->
     <dimen name="title_icon_margin_screen">15dp</dimen>
+    <!-- 间隔线的粗细 -->
+    <dimen name="parting_line_height">0.3dp</dimen>
+
+    <!-- 新闻界面 -->
+    <!-- 侧滑抽屉的宽度 -->
+    <dimen name="news_drawer_width">200dp</dimen>
+    <!-- 新闻界面轮播图的高度 -->
+    <dimen name="news_cycle_view_height">180dp</dimen>
+    <!-- 新闻界面轮播图小球的长宽 -->
+    <dimen name="cycle_view_ball_size">5dp</dimen>
+    <!-- 新闻界面轮播图小球的间隔 -->
+    <dimen name="cycle_view_ball_margin">2dp</dimen>
+    <!-- 新闻界面轮播图小球的距边缘的的距离 -->
+    <dimen name="cycle_view_ball_margin_side">15dp</dimen>
+    <!-- 新闻界面抽屉的宽度 -->
+    <dimen name="drawer_width">200dp</dimen>
+    <!-- 新闻界面Item内部组件的距离 -->
+    <dimen name="news_item_in_margin">10dp</dimen>
+    <!-- 新闻界面Item作者名字,时间和类型的字体大小 -->
+    <dimen name="news_item_name_size">12sp</dimen>
+    <!-- 新闻界面Item作者内容的字体大小 -->
+    <dimen name="news_item_content_size">15sp</dimen>
+    <dimen name="kr_tv_hei">203dp</dimen>
+    <dimen name="kr_tv_mar">120dp</dimen>
+
+    <!-- 新闻详情界面 -->
+    <!-- 作者头像的宽高 -->
+    <dimen name="news_details_head_image_size">45dp</dimen>
+    <!-- 页边距 -->
+    <dimen name="news_details_margin_screen">15dp</dimen>
+    <!-- 作者姓名字体大小 -->
+    <dimen name="news_details_name_size">15sp</dimen>
+    <!-- 作者标签的字体大小 -->
+    <dimen name="news_details_writer_tag_size">11sp</dimen>
+    <!-- 作者标签距名字的距离 -->
+    <dimen name="news_details_writer_tag_margin_name">5dp</dimen>
+    <!-- 作者名字距介绍的距离 -->
+    <dimen name="news_details_info_margin_name">6dp</dimen>
+    <!-- 文章标题的距离上左右的距离 -->
+    <dimen name="news_details_title_margin">30dp</dimen>
+    <!-- 文章标题字体大小 -->
+    <dimen name="news_details_title_size">22sp</dimen>
+    <!-- 文章摘要的距离 -->
+    <dimen name="news_details_summary_margin">30dp</dimen>
+    <!-- 文章内容的的字体大小-->
+    <dimen name="news_details_content_size">15sp</dimen>
+
+
+    <!-- 股权投资界面-->
+    <!-- ListView的间隔距离 -->
+    <dimen name="invest_tab_lv_gap">20dp</dimen>
+    
+    <!-- 发现界面-->
     <!-- find界面搜索框即屏幕的距离-->
     <dimen name="find_tool_bar_search_margin_screen">12dp</dimen>
+
+    <!-- 发现界面近期活动界面 -->
+    <!-- 分类的字体大小 -->
+    <dimen name="find_recent_aty_kind_size">15sp</dimen>
+    <!-- 分类距下拉箭头的距离 -->
+    <dimen name="find_recent_aty_kind_margin_arrow">30dp</dimen>
+    <dimen name="recent_event_item_image">180dp</dimen>
+
+    <dimen name="find_invest_text_size">15sp</dimen>
+
+    <dimen name="find_fragment_mar">8dp</dimen>
+
+    <!-- 登录界面 -->
+    <!-- title的高度-->
+    <dimen name="login_title_height">220dp</dimen>
+    <!-- 退出X按钮距屏幕的距离-->
+    <dimen name="login_quit_margin_screen">20dp</dimen>
+    <dimen name="login_fragment_padding">35dp</dimen>
+
+    <!-- 设置界面 -->
+    <!-- 页边距-->
+    <dimen name="setting_margin_screen">15dp</dimen>
+    <!-- 间隔高度 -->
+    <dimen name="setting_gap_height">10dp</dimen>
+    <!-- 字体大小 -->
+    <dimen name="setting_text_size">16sp</dimen>
+
+
+    <!-- 修改密码界面 -->
+    <dimen name="change_code_margin">35dp</dimen>
+    <dimen name="change_code_text_size">16sp</dimen>
+
+    <!-- 引导页 -->
+    <dimen name="guide_aty_auto_scroll_dots_padding">30dp</dimen>
+    <dimen name="guide_button_mar">70dp</dimen>
+    <dimen name="guide_button_hei">40dp</dimen>
+    <dimen name="guide_button_wid">100dp</dimen>
+
+    <!-- 欢迎页 -->
+    <dimen name="welcome_aty_turn_tv_wid">70dp</dimen>
+    <dimen name="welcome_aty_turn_tv_hei">35dp</dimen>
+    <dimen name="welcome_aty_turn_tv_mar">20dp</dimen>
+
+    <!-- 我的界面 -->
+    <dimen name="mine_fragment_margin">15dp</dimen>
+    <dimen name="mine_popup_call_tv_hei">40dp</dimen>
+
+    <!-- 注册界面 -->
+    <dimen name="register_fragment_text_size">13sp</dimen>
+
+    <dimen name="early_image_hei">60dp</dimen>
+    <dimen name="early_image_wid">80dp</dimen>
+    <dimen name="early_text_size">10sp</dimen>
+
+    <!-- body content -->
+    <dimen name="body_padding_medium">10dp</dimen>
+    <dimen name="body_padding_large">10dp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_medium">18sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_xlarge">18sp</dimen>
+    <dimen name="speaker_image_size">36dp</dimen>
+    <dimen name="speaker_image_padding">8dp</dimen>
+    <dimen name="vendor_image_size">100dp</dimen>
+
+    <dimen name="actionbar_height">45dip</dimen>
+    <dimen name="actionbar_item_height">45dip</dimen>
+    <dimen name="actionbar_item_width">45dip</dimen>
+
+
 </resources>

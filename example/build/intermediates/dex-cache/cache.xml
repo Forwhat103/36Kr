@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/dllo/Desktop/githubspace/36Kr/example/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="/Users/dllo/Desktop/githubspace/36Kr/example/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.2.1_9e85879c97561f912ac889f1dd5b94f4cab6fd1d/classes.dex" />
+    </item>
+    <item
+        jar="/Users/dllo/Desktop/githubspace/36Kr/example/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="5707c6ba94b49db81d039e79e6ef652e699ca42f">
+        <dex dex="/Users/dllo/Desktop/githubspace/36Kr/example/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d3b4b80b2b32b5bf7564f1a6247c5a356f682c8a/classes.dex" />
+    </item>
+    <item
+        jar="/Users/dllo/Desktop/AndroidTool/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="/Users/dllo/Desktop/githubspace/36Kr/example/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.2.1_32e70001d5844dedbf933fd7601d9844dd13a3e1/classes.dex" />
+    </item>
+    <item
+        jar="/Users/dllo/Desktop/githubspace/36Kr/example/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/libs/internal_impl-23.2.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="/Users/dllo/Desktop/githubspace/36Kr/example/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.2.1_3f7db84dcbafd4bbe8f81033d6fce2a0a141014c/classes.dex" />
+    </item>
+    <item
+        jar="/Users/dllo/Desktop/githubspace/36Kr/example/app/libs/utdid4all-1.0.4.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4345fa0a5a7768f2f9c86aaab7db9e2906765193">
+        <dex dex="/Users/dllo/Desktop/githubspace/36Kr/example/app/build/intermediates/transforms/dex/debug/folders/1000/2/utdid4all-1.0.4_68f1be99a74b46a070f4fc4d9c5cfda65bfd33bd/classes.dex" />
+    </item>
+    <item
+        jar="/Users/dllo/Desktop/githubspace/36Kr/example/app/libs/umeng-analytics-v6.0.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="aab9085bca0c26dcb9cb11837a5f5e22cc102a5e">
+        <dex dex="/Users/dllo/Desktop/githubspace/36Kr/example/app/build/intermediates/transforms/dex/debug/folders/1000/2/umeng-analytics-v6.0.1_346c7e6abc64658461f3f6a5b11fdc623311f7fa/classes.dex" />
+    </item>
+    <item
+        jar="/Users/dllo/Desktop/githubspace/36Kr/example/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d5c98794893ea74d1bcf4eec3b9960d7449e7a48">
+        <dex dex="/Users/dllo/Desktop/githubspace/36Kr/example/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_5518f50ef3f3629e8075db73073973398cb1e9ab/classes.dex" />
+    </item>
+
+</items>
